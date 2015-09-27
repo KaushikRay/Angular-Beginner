@@ -1,0 +1,78 @@
+<apex:page standardStylesheets="false" sidebar="false" showHeader="false">
+    <style>
+        table, th , td  {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+    </style>
+    <html  ng-app="myApp">
+        <link rel="stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+        <script src= "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+        
+        <body>
+        
+        <div ng-controller="personCtrl">
+            Search table :<br/>
+            <input type="text" ng-model="criteria" /> <br/><br/>
+            <table class="table table-striped table-bordered table-hover table-condensed">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>City</th>
+                        <th>Country</th>
+                    </tr>
+                </thead>
+                <tr ng-repeat="x in names | filter:criteria">
+                    <td>{{x.Name}}</td>
+                    <td>{{x.City}}</td>
+                    <td>{{x.Country}}</td>
+                </tr>
+            </table>
+
+                <form name="myForm">
+                    First Name :<br/>
+                    <input type="text" ng-model="firstName"/><br/>
+                    Last Name :<br/>
+                    <input type="text" ng-model="lastName" />
+                    <br/>
+                    City :<br/>
+                    <input type="text" ng-model="city" /><br/>
+                    Country :<br/>
+                    <input type="text" ng-model="country" /><br/>
+                    <br/>
+                    <button ng-click="addRow();" >Add New Row</button>
+                </form>
+        </div>
+        <script>
+            angular.module('myApp', []).controller('personCtrl', function($scope, $http) {
+                $scope.fullName = function() {
+                    return $scope.firstName + ' ' + $scope.lastName;
+                };
+
+                var response =
+                    JSON.parse('{"records": [{"Name": "John Doe","City": "Berlin","Country": "Germany"},{"Name": "Robert","City": "Mumbai","Country": "India"}]}');
+                $scope.names = response.records;
+                console.log('-->' , $scope.names);
+
+                $scope.reset = function() {
+                    delete $scope.firstName;
+                    delete $scope.lastName;
+                    delete $scope.city;
+                    delete $scope.country;
+                }
+
+                $scope.addRow = function() {
+                    $scope.names.push({Name:$scope.fullName(), City:$scope.city, Country:$scope.country});
+                    $scope.reset();
+                }
+            });
+
+            function addNewData() {
+
+            }
+        </script>
+        </body>
+    </html>
+
+</apex:page>
