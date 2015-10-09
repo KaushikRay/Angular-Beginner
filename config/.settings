@@ -1,0 +1,16 @@
+{
+    "projectName": "kaushik@tooling.com",
+    "username": "kaushik@tooling.com",
+    "id": "2a722440-6ea9-11e5-b67e-8116ddacb521",
+    "namespace": "",
+    "environment": "production",
+    "workspace": "D:/WORKSPACES/SALESFORCE/ATOM",
+    "subscription": [
+        "ApexClass",
+        "ApexComponent",
+        "ApexPage",
+        "ApexTrigger",
+        "StaticResource"
+    ],
+    "password": "Test@123"
+}
