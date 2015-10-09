@@ -1,0 +1,15 @@
+<apex:page controller="LoginController">
+    <apex:form >
+    <apex:pageMessage summary="{!rawResponse}" severity="Error"/>
+    <apex:pageBlock id="LoginPanel">
+        <apex:pageBlockSection columns="1">
+            <apex:outputLabel >Username</apex:outputLabel>
+            <apex:inputText value="{!username}" />
+            <apex:outputLabel >Passowrd</apex:outputLabel>
+            <apex:inputText value="{!password}" />
+            <apex:inputTextarea value="{!codeToExecute}" />
+            <apex:commandButton value="Authenticate" action="{!authenticateUser}"/>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>
