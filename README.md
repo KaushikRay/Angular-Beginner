@@ -1,3 +1,8 @@
+<a href="https://githubsfdeploy.herokuapp.com?owner=KaushikRay&repo=Angular-Beginner">
+  <img alt="Deploy to Salesforce"
+       src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/src/main/webapp/resources/img/deploy.png">
+</a>
+
 # Angular-Beginner
 Very Basic Angular library
 
