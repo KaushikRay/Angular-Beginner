@@ -1,4 +1,4 @@
-<a href="https://githubsfdeploy.herokuapp.com?owner=KaushikRay&repo=Angular-Beginner">
+<a href="https://githubsfdeploy.herokuapp.com?owner=KaushikRay&repo=Angular-Beginner&branch=master">
   <img alt="Deploy to Salesforce"
        src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/src/main/webapp/resources/img/deploy.png">
 </a>
